@@ -1,0 +1,79 @@
+[
+  {
+    "Key": "MagicalAptitude.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create links to encyclopedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Magical Aptitude"
+  },
+
+  {
+    "Key": "MagicalAptitude.Description",
+    "enGB": "You get a +2 bonus on all Spellcraft and Use Magic Device skill checks. If you have 10 or more ranks in one of these skills, the bonus increases to +4 for that skill."
+  },
+
+  {
+    "Key": "Dragon.Name",
+    "ProcessTemplates": false,
+    "enGB": "Dragon"
+  },
+
+  {
+    "Key": "Dragon.Description",
+    "enGB": "The frightful, powerful creatures of legend begin their lives as small, four legged scaled creatures unable to fly and barely reaching 3 ft in length. As they gain experience, however, they become far stronger, growing in size and power."
+  },
+
+  {
+    "Key": "DragonImmunity.Name",
+    "ProcessTemplates": false,
+    "enGB": "Dragon Immunities"
+  },
+
+  {
+    "Key": "DragonImmunity.Description",
+    "enGB": "Dragons are immune to Paralysis and Magical Sleep Effects."
+  },
+
+  {
+    "Key": "DragonForm.Name",
+    "ProcessTemplates": false,
+    "enGB": "Alternate Form"
+  },
+
+  {
+    "Key": "DragonFormDescription",
+    "enGB": "A Dragon may transform between a human form and its True Form at will. A Dragon in its True Form may still use equipment (although suffer additional penalties for using weapons and armor in dragon form, see Unfettered Predator and Dexterous Claws), gains 2 Natural Armor, a Bite that does 1d6 damage, and two claw attacks that deal 1d3 damage. The Dragon's True form grows stronger if they take the Dragon Exemplar or Dragon Hero archetypes, growing in size and power."
+  },
+
+  {
+    "Key": "ScaledHide.Name",
+    "ProcessTemplates": false,
+    "enGB": "Scaled Hide"
+  },
+
+  {
+    "Key": "ScaledHide.Description",
+    "enGB": "Dragons have a +2 natural armor bonus to AC."
+  },
+
+  {
+    "Key": "SuperiorAwareness.Name",
+    "ProcessTemplates": false,
+    "enGB": "Superior Awareness"
+  },
+
+  {
+    "Key": "SuperiorAwareness.Description",
+    "engGB": "Dragons gain a +2 racial bonus on Perception checks."
+  },
+
+  {
+    "Key": "DHPaladin.Name",
+    "ProcessTemplates": false,
+    "enGB": "Dragon Paladin"
+  },
+
+  {
+    "Key": "DHDescription",
+    "enGB":  "The Dragon Hero is a multi-class archetype that allows non-Exemplar dragons to grow in size, stature, and power. A dragon who multiclasses applies this archetype to every applicable class, adding the class levels together to determine the archetype abilities gained."
+  }
+]

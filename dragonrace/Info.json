@@ -1,0 +1,12 @@
+﻿{
+  "Id": "dragonrace",
+  "DisplayName": "In The Company of Dragons",
+  "Author": "",
+  "Version": "1.0.0",
+  "ManagerVersion": "0.27.11",
+  "Requirements": [],
+  "AssemblyName": "dragonrace.dll",
+  "EntryMethod": "dragonrace.Main.Load",
+  "HomePage": "",
+  "Repository": ""
+}
