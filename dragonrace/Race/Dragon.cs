@@ -35,48 +35,56 @@ using UnityEngine.XR;
 using System.Windows.Markup;
 using Kingmaker.Designers.Mechanics.Buffs;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
+using dragonrace.Utility;
+using Kingmaker.RuleSystem;
 
 namespace dragonrace.Race
 {   
     class Dragon
     {
-        private static readonly string DragonFormBuffName = "DragonFormBuffName";
-        private static readonly string DragonFormBuffGuid = "2E1F1EA3-C614-409A-AB2C-DEAA31991F3B";
-
-        private static readonly string DragonFormToggle = "DragonFormToggle";
-        private static readonly string DragonFormToggleGuid = "421CBCA1-2E07-47F5-9C79-7942DB12240E";
-        private static readonly string DragonFormDisplayName = "DragonForm.Name";
-        private static readonly string DragonFormDescription = "DragonFormDescription";
-
-        private static readonly string DragonFormFeat = "DragonFormFeat";
-        private static readonly string DragonFormFeatGuid = "04A4CC53-BC76-488D-96CC-61ADE6D7C55D";
-
-        private static readonly string DragonRaceName = "Dragon";
-        private static readonly string DragonRaceGuid = "9F36923C-7585-444D-BAC0-82DB48390FB7";
+        private static readonly string DragonRace = "Dragon";
+        //private static readonly string DragonRaceGuid = "9F36923C-7585-444D-BAC0-82DB48390FB7";
 
         private static readonly string DragonImmunityName = "DragonImmunity";
         private static readonly string DragonImmunityGuid = "0937E6AD-63CB-4F2C-8D5A-799AD1544024";
-        private static readonly string DragonImmunityDescription = "DragonImmunity.Description";
-
-        private static readonly string ScaledHideName = "ScaledHide";
-        private static readonly string ScaledHideDescription = "ScaledHide.Description";
-        private static readonly string ScaledHideGuid = "7E3DC053-D929-4046-B44B-902BCF78025E";
 
         private static readonly string SuperiorAwarenessName = "SuperiorAwareness";
-        private static readonly string SuperiorAwqarenessDescription = "SuperiorAwaremess.Description";
         private static readonly string SuperiorAwarenessGuid = "B47290CE-C762-4EDC-92E8-044A70CFA2A2";
-
-        private static readonly string HumanFormResourceName = "HumanFormResource";
-        private static readonly string HumanFormResourceGuid = "D8DE3696-AED5-48DE-812A-FF0B31E43F1E";
 
         internal const string DragonDisplayName = "Dragon.Name";
         private static readonly string DragonDescription = "Dragon.Description";
 
-        private static readonly string UnfetteredPredatorName = "DragonFormScale";
-        private static readonly string UnfetteredPredatorGuid = "9434F8A6-E4B0-4F64-933E-97036FC6FCDF";
+        private static readonly string UnfetteredPredatorName = "UnfetteredPredator";
+        private static readonly string UnfetteredPredatorBuffName = "UnfetteredPredatorBuff";
+        
+
+        //Heritages
+        private static readonly string DragonHeritageSelectionName = "DragonHeritageSelection";
+        private static readonly string DragonHeritageSelectionGuid = "FD830208-547B-4EC4-8C66-70AEF9C24016";
+
+
+        //private static readonly string DragonHeritageGoldGuid = "3EC8FC61-E3AA-49F6-99CA-0BFD49725737";
 
         public static void Configure()
         {
+            Heritages.DragonGold.Configure();
+
+                var heritageGold = BlueprintTool.Get<BlueprintFeature>(Guids.DragonGoldGuid);
+
+                Blueprint<BlueprintFeatureReference>[] heritageList = new Blueprint<BlueprintFeatureReference>[]
+                {
+                    heritageGold
+                };
+
+                var heritageSelection =
+                    FeatureSelectionConfigurator.New(DragonHeritageSelectionName, DragonHeritageSelectionGuid)
+                    .SetDisplayName("Dragon.HeritageSelection.Name")
+                    .SetDescription("DragonHeritageGold.Description")
+                    .AddToGroups(FeatureGroup.Racial)
+                    .SetAllFeatures(heritageList)
+                    //.SetIcon()
+                    .Configure();
+
             var dragonimmunities =
                 FeatureConfigurator.New(DragonImmunityName, DragonImmunityGuid)
                 .SetDisplayName("DragonImmunity.Name")
@@ -85,80 +93,50 @@ namespace dragonrace.Race
                 .AddConditionImmunity(Kingmaker.UnitLogic.UnitCondition.Sleeping)
                 .Configure();
 
-            var scaledhide =
-                FeatureConfigurator.New(ScaledHideName, ScaledHideGuid)
-                .SetDisplayName("ScaledHide.Name")
-                .SetDescription("ScaledHide.Description")
-                .AddStatBonus(Kingmaker.Enums.ModifierDescriptor.NaturalArmorForm, stat: StatType.AC, value: 2)
-                .Configure();
-
             var superiorawareness =
                 FeatureConfigurator.New(SuperiorAwarenessName, SuperiorAwarenessGuid)
                 .SetDisplayName("SuperiorAwareness.Name")
-                .SetDescription("SuperiorAwarenessDescription")
+                .SetDescription("SuperiorAwareness.Description")
                 .AddStatBonus(ModifierDescriptor.Racial, stat: StatType.SkillPerception, value: 2)
                 .Configure();
 
+            var unfetteredpredatorbuff =
+                BuffConfigurator.New(UnfetteredPredatorBuffName, Guids.UnfetteredPredatorBuffGuid)
+                .SetDisplayName("UnfetteredPredator.Name")
+                .SetDescription("UnfetteredPredator.Description")
+                .SetIcon(ItemWeaponRefs.Claw1d10.Reference.Get().Icon)
+                .AddAttackBonus(-2)
+                .Configure();
+
             var unfetteredpredator =
-                FeatureConfigurator.New(UnfetteredPredatorName, UnfetteredPredatorGuid)
+                FeatureConfigurator.New(UnfetteredPredatorName, Guids.UnfetteredPredatorGuid)
+                .SetDisplayName("UnfetteredPredator.Name")
+                .SetDescription("UnfetteredPredator.Description")
+                .SetIcon(ItemWeaponRefs.Claw1d10.Reference.Get().Icon)
+                //.AddArmorCheckPenaltyIncrease(-2) Added to the dragonform buffs so it only applies while in dragon form.
+                .AddBuffOnLightOrNoArmor(
+                    buff: unfetteredpredatorbuff)
                 .Configure();
 
-
-            var DragonFormBuffI =
-            BuffConfigurator.New(DragonFormBuffName, DragonFormBuffGuid)
-                .CopyFrom(BuffRefs.FormOfTheDragonIGoldBuff, typeof(Polymorph))
-                .EditComponent<Polymorph>(
-                    c =>
-                    {
-                        c.m_AdditionalLimbs = null;
-                        c.m_SecondaryAdditionalLimbs = null;
-                        c.Size = Size.Small;
-                        c.StrengthBonus = 0;
-                        c.ConstitutionBonus = 0;
-                        c.NaturalArmor = 2;
-                        c.m_KeepSlots = true;
-                        c.m_Facts = null;
-                    }
-                )
-                .SetDisplayName(DragonFormDisplayName)
-                .SetDescription(DragonFormDescription)
-                .AddAdditionalLimb(ItemWeaponRefs.Bite1d6.ToString())
-                //.AddSecondaryAttacks(ItemWeaponRefs.Claw1d4.ToString())
-                //.AddSecondaryAttacks(ItemWeaponRefs.Claw1d4.ToString())
-                .AddEmptyHandWeaponOverride(weapon: ItemWeaponRefs.Claw1d3.ToString())
-                //.AddUnitScale(scaleIncreaseCoefficient:0.15F)
-                .Configure();
-
-
-            var dragonformtoggleability =
-                 ActivatableAbilityConfigurator.New(DragonFormToggle, DragonFormToggleGuid)
-                    //.SetIcon(Icon)
-                    .SetDisplayName(DragonFormDisplayName)
-                    .SetDescription(DragonFormDescription)
-                    .SetBuff(DragonFormBuffI)
-                    .SetIsOnByDefault(true)
-                    .Configure();
-
-            var DragonFormToggleFeature =
-                FeatureConfigurator.New(DragonFormFeat, DragonFormFeatGuid)
-                .AddFacts(new() { dragonformtoggleability })
-                .SetDisplayName(DragonFormDisplayName)
-                .SetDescription(DragonFormDescription)
-                .Configure();
+            //var dextrousclaws =
+               // FeatureConfigurator.New(DextrousClawsName, Guids.DextrousClawsGuid)
+                //.SetDisplayName("DextrousClaws.Name")
+                //.SetDescription("DextrousClaws.Description")
+                //.Configure();
 
             var race =
-            RaceConfigurator.New(DragonRaceName, DragonRaceGuid)
+            RaceConfigurator.New(DragonRace, Guids.DragonRaceGuid)
                 .CopyFrom(RaceRefs.HumanRace)
                 .SetDisplayName(DragonDisplayName)
                 .SetDescription(DragonDescription)
                 .SetSelectableRaceStat(false)
-                .SetFeatures(DragonFormToggleFeature, dragonimmunities, superiorawareness)
+                .SetFeatures(heritageSelection, dragonimmunities, superiorawareness, unfetteredpredator)
                 //.AddAdditionalLimb(ItemWeaponRefs.Bite1d6.ToString())
                 .AddStatBonus(Kingmaker.Enums.ModifierDescriptor.Racial, stat: Kingmaker.EntitySystem.Stats.StatType.Constitution, value: 2)
                 .AddStatBonus(Kingmaker.Enums.ModifierDescriptor.Racial, stat: Kingmaker.EntitySystem.Stats.StatType.Dexterity, value: -2)
                 .AddStatBonus(Kingmaker.Enums.ModifierDescriptor.Racial, stat: Kingmaker.EntitySystem.Stats.StatType.Charisma, value: 2)
-                .SetRaceId(Kingmaker.Blueprints.Race.Halfling)
-                .Configure();
+                .SetRaceId(Kingmaker.Blueprints.Race.HalfElf)
+                .Configure(delayed: true);
 
             var raceRef = race.ToReference<BlueprintRaceReference>();
             ref var races = ref BlueprintRoot.Instance.Progression.m_CharacterRaces;

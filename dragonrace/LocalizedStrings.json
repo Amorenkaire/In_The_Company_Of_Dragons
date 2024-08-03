@@ -23,6 +23,23 @@
   },
 
   {
+    "Key": "Dragon.HeritageSelection.Name",
+    "ProcessTemplates": false,
+    "enGB": "Heritage"
+  },
+
+  {
+    "Key": "DragonHeritageGold.Name",
+    "ProcessTemplates": false,
+    "enGB": "Gold Dragon"
+  },
+
+  {
+    "Key": "DragonHeritageGold.Description",
+    "enGB": "Gold dragons are the epitome of virtue. Other dragons typically revere their gold cousins as agents of divine forces and the paragons of dragonkind, and often seek them for advice or aid.\nA Gold Dragon's elemental essence is tied to fire, and their breath weapon is a cone."
+  },
+
+  {
     "Key": "DragonImmunity.Name",
     "ProcessTemplates": false,
     "enGB": "Dragon Immunities"
@@ -41,18 +58,31 @@
 
   {
     "Key": "DragonFormDescription",
-    "enGB": "A Dragon may transform between a human form and its True Form at will. A Dragon in its True Form may still use equipment (although suffer additional penalties for using weapons and armor in dragon form, see Unfettered Predator and Dexterous Claws), gains 2 Natural Armor, a Bite that does 1d6 damage, and two claw attacks that deal 1d3 damage. The Dragon's True form grows stronger if they take the Dragon Exemplar or Dragon Hero archetypes, growing in size and power."
+    "enGB": "A Dragon may transform between a human form and its True Form at will. A Dragon in its True Form may still use equipment (although suffer additional penalties for using weapons and armor in dragon form, see Unfettered Predator and Dexterous Claws), gains 2 Natural Armor, a Bite that does 1d6 damage, and two claw attacks that deal 1d4 damage. The Dragon's True form grows stronger if they take the Dragon Exemplar or Dragon Hero archetypes, growing in size and power."
   },
 
   {
-    "Key": "ScaledHide.Name",
+    "Key": "DragonFormI.Description",
+    "enGB": "You have assumed your true form, a small-sized feral dragon. While in your true form, you have a bite attack that deals 1d6 damage, two claw attacks that deal 1d4 damage, and have 2 Natural Armor."
+  },
+
+  {
+    "Key": "DragonFormII.Description",
+    "enGB": "You have assumed your true form, a medium-sized feral dragon. While in your true form you gain a +2 size bonus to Strength, a bite attack that deals 1d8 damage, two claw attacks that deal 1d6 damage, and two wing attacks that deal 1d4 damage. Your wings are strong enough to take flight, providing immunity to ground based effects and a +3 dodge bonus against melee attacks. Your speed increases to 40ft, and you have 4 Natural Armor."
+  },
+
+  ///{
+  ///},
+
+  {
+    "Key": "UnfetteredPredator.Name",
     "ProcessTemplates": false,
-    "enGB": "Scaled Hide"
+    "enGB": "Unfettered Predator"
   },
 
   {
-    "Key": "ScaledHide.Description",
-    "enGB": "Dragons have a +2 natural armor bonus to AC."
+    "Key": "UnfetteredPredator.Description",
+    "enGB": "Dragons in their true form can only wear barding, and even then chafe at the restrictions armor can cause to their natural movements. Dragons increase the armor check penalty of any worn armor by 2, and suffer a -2 penalty on attack rolls while wearing medium or heavy armor even if they are proficient in it."
   },
 
   {
@@ -67,13 +97,190 @@
   },
 
   {
-    "Key": "DHPaladin.Name",
+    "Key": "DHMonk.Name",
     "ProcessTemplates": false,
-    "enGB": "Dragon Paladin"
+    "enGB": "Hidecarved Dragon"
   },
 
   {
-    "Key": "DHDescription",
-    "enGB":  "The Dragon Hero is a multi-class archetype that allows non-Exemplar dragons to grow in size, stature, and power. A dragon who multiclasses applies this archetype to every applicable class, adding the class levels together to determine the archetype abilities gained."
+    "Key": "DHMonk.Description",
+    "enGB": "Hidecarved dragons are members of an enigmatic order of dragons and half-dragons. Their name comes from the markings engraved on their scales, which grant them incredible mystical protection. Dragons of the hidecarved order resemble monks in their strict discipline, dedication to personal perfection, and mystical transcendence."
+  },
+
+  {
+    "Key": "DHPaladin.Name",
+    "ProcessTemplates": false,
+    "enGB": "Sacred Warder"
+  },
+
+  {
+    "Key": "DHPaladin.Description",
+    "enGB": "Among dragons, some are moved primarily by compassion for those who suffer from the depredations of evil dragons. Those become members of the Sacred Warders, shaping their identities around those who cannot hope to protect themselves from the awesome power of Dahak's followers."
+  },
+
+  {
+    "Key": "DHSorcerer.Name",
+    "ProcessTemplates": false,
+    "enGB": "Trueblood Sorcerer"
+  },
+
+  {
+    "Key": "DHSorcerer.Description",
+    "enGB": "Trueblood sorcerers are dragons who develop grand arcane talent through the power of their pure draconic blood. They are the embodiment of the dragon as spellcaster even more than a standard sorcerer who gains power from a draconic bloodline."
+  },
+
+  {
+    "Key": "GoldDragonSorcBreath.Name",
+    "ProcessTemplates": false,
+    "enGB": "Breath Weapon"
+  },
+
+  {
+    "Key": "GoldDragonSorcBreath.Description",
+    "enGB": "Your breath weapon deals 1d6 points of fire damage for every Sorcerer level in a 30-foot cone and allows a Reflex safe for half damage. You can use it a number of times per day equal to 3 plus your Charisma modifier, and you must wait 1d4 rounds between use."
+  },
+
+  {
+    "Key": "DragonDiminishedCasting.Name",
+    "RocessTemplates": false,
+    "enGB": "Diminished Spellslots"
+  },
+
+  {
+    "Key": "DragonDiminishedCasting.Description",
+    "enGB": "The Trueblood sorcerer has diminished spellcasting, casting one fewer spell per day of each level than normal. If this reduces the number to 0, you may cast spells of that level only if your Charisma allows bonus spells of that level."
+  },
+
+  {
+    "Key": "GoldDragonSorcerer.Name",
+    "ProcessTemplates": false,
+    "enGB": "Trueblood Sorcerer - Gold"
+  },
+
+  {
+    "Key": "GoldDragonSorcerer.Description",
+    "enGB": "A Trueblood Sorcerer must select the Draconic Bloodline of their heritage. They do not gain any of the normal bloodline powers except for its Arcana, spells known, and class skill. Instead, they gain a Breath Weapon at 1st level which grows in power with their Bloodline level, and in size by their Dracomorphosis feature."
+  },
+
+  {
+    "Key": "DHEldritchKnight.Name",
+    "ProcessTemplates": false,
+    "enGB": "Spellclaw"
+  },
+
+  {
+    "Key": "DHEldritchKnight.Description",
+    "enGB": "The martial application of arcane power comes naturally to dragonkind. Dragons that dedicate themselves towards the twin mastery of physical and magical prowess become known as Spellclaws."
+  },
+
+  {
+    "Key": "DHDragonDisciple.Name",
+    "ProcessTemplates": false,
+    "enGB": "Dragon Fundamentalist"
+  },
+
+  {
+    "Key": "DHDragonDisciple.Description",
+    "enGB": "Some dragons study not just the arcane power which flows from their blood, but the deepest secrets of their nature. Such self-reflecting wyrms enhance their physical bodies as well as their magical powers as a result of such fundamentalist philosophies."
+  },
+
+  {
+    "Key": "DragonHeroProgDescription",
+    "enGB": "The Dragon Hero is a multi-class archetype that allows non-Exemplar dragons to grow in size, stature, and power. A dragon who multiclasses applies this archetype to every applicable class, adding the class levels together to determine the archetype abilities gained."
+  },
+
+  {
+    "Key": "DragonHero",
+    "ProcessTemplates": false,
+    "enGB": "Dragon Hero"
+  },
+
+  {
+    "Key": "DragonEssenceGold.Name",
+    "ProcessTemplates": false,
+    "enGB": "Dragon Essence: Gold"
+  },
+
+  {
+    "Key": "DragonEssenceGoldDescription",
+    "enGB": "At 1st level, a Dragon Hero gains resist energy 5 for the energy type associated with their Heritage. This increases to resist energy 10 at 5th level, resist energy 20 at 10th level, and resist energy 30 at 15th level."
+  },
+
+  {
+    "Key": "DracomorphosisI.Name",
+    "ProcessTemplates": false,
+    "enGB": "Dracomorphosis"
+  },
+
+  {
+    "Key": "DracomorphosisIDescription",
+    "enGB": "At 5th level, you increase your size to Medium, adjusting the base damage of your natural attacks accordingly. Your wings have grown strong enough to carry your weight at last, granting a pair of secondary wing attacks that deal 1d4 damage, a +3 dodge bonus to AC against melee attacks and an immunity to ground based effects such as difficult terrain.\nAdditionally, you gain a +2 size bonus to Strength, your natural armor increases to +5, and your movement speed increases by 10ft."
+  },
+
+  {
+    "Key": "DracomorphosisII.Name",
+    "ProcessTemplates": false,
+    "enGB": "Dracomorphosis"
+  },
+
+  {
+    "Key": "DracomorphosisIIDescription",
+    "enGB": "At 10th level, you increase your size to Large, adjusting the base damage of your natural attacks accordingly. You gain a secondary tail slap attack that deals 1d8 points of damage and adds one-and-a-half times your Strength modifier to its damage rolls.\nYou gain an additional +2 Size bonus to Strength, a +2 Size bonus to Constitution, and reduce your Dexterity by 2. Your size bons to natural armor increases to +7."
+  },
+
+  {
+    "Key": "DracomorphosisIII.Name",
+    "ProcessTemplates": false,
+    "enGB": "Dracomorphosis"
+  },
+
+  {
+    "Key": "DracomorphosisIIIDescription",
+    "enGB": "At 15th level, your size increases to Huge, adjusting the base damage of your natural attacks accordingly. You gain an additional +2 size bonus to Strength and further reduce your Dexterity by 2 (4 total). Your natural armor bonus increases to +10."
+  },
+
+  {
+    "Key": "DracomorphosisIV.Name",
+    "ProcessTemplates": false,
+    "enGB": "Dracomorphosis"
+  },
+
+  {
+    "Key": "DracomorphosisIVDescription",
+    "enGB": "At 20th level, your size increases to Gargantuan. You gain an additional +2 size bonus to Strength, an additional +2 size bonus to Constitution, and further reduce your Dexterity by 2 (6 total). Your natural armor bonus increases to +13."
+  },
+
+  {
+    "Key": "PowerfulSpellcasting.Name",
+    "ProcessTemplates": false,
+    "enGB": "Powerful Spellcasting"
+  },
+
+  {
+    "Key": "PowerfulSpellcasting.Description",
+    "enGB": "At 5th level, you gain a +1 bonus on caster level checks to overcome spell resistance. This bonus increases by +1 for every five additional levels (maximum +4 at 20th level)."
+  },
+  //Gifts
+  {
+    "Key": "NaturalSorcery.Name",
+    "ProcessTemplates": false,
+    "enGB": "Natural Sorcery"
+  },
+
+  {
+    "Key": "NaturalSorcery.Description",
+    "enGB": "The draconic paragon has unlocked his latent draconic talent for arcane spellcasting. He gains the spells known and spells per day of a 2nd level sorcerer. If the draconic paragon also has levels in the sorcerer class, he increases his effective sorcerer level by 2 (to a maximum of his character level) to determine spells known, spells per day, and caster level. This gift can be learned up to three times. Each additional time this gift is learned, the draconic paragon's effective sorcerer level increases by 2. The draconic paragon must be at least 9th level to gain this gift.\nCurrently does not add spells known, please add the spells known you'd gain from two levels of sorcerer casting via Toybox."
+  },
+
+  //Feats
+  {
+    "Key": "LatentDraconicGift.Name",
+    "ProcessTemplates": false,
+    "enGB": "Latent Draconic Gift"
+  },
+
+  {
+    "Key": "LatentDraconicGift.Description",
+    "enGB": "You gain a draconic gift, similar to the dragon paragon class feature. Your effective dragon paragon level is equal to your level in classes that grant you dracomorphosis for purposes of meeting any prerequisite of your chosen draconic gift.\nYou can take this feat one time for every five levels you have in classes that grant the dracomorphosis ability."
   }
 ]

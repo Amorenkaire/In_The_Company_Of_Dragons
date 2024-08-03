@@ -11,6 +11,9 @@ using Kingmaker.Blueprints.JsonSystem;
 using dragonrace.Feats;
 using dragonrace.Race;
 using dragonrace.Archetypes;
+using dragonrace.Race.Heritages;
+using BlueprintCore.Blueprints.Configurators.Root;
+using dragonrace.Utility;
 
 namespace dragonrace;
 
@@ -72,11 +75,37 @@ public static class Main {
                 DragonHeroArchetypes.Configure();
 
                 Logger.Info("Configuring Feat Blueprints");
-                MagicalAptitude.Configure();
+                Feats.Feats.Configure();
             }
             catch (Exception e)
             {
                 Logger.Error("Failed to initialize.", e);
+            }
+        }
+
+        [HarmonyPatch(typeof(StartGameLoader))]
+        static class StartGameLoader_Patch
+        {
+            private static bool Initialized = false;
+
+            [HarmonyPatch(nameof(StartGameLoader.LoadPackTOC)), HarmonyPostfix]
+            static void LoadPackTOC()
+            {
+                try
+                {
+                    if (Initialized)
+                    {
+                        Logger.Info("Already configured delayed blueprints.");
+                        return;
+                    }
+                    Initialized = true;
+
+                    RootConfigurator.ConfigureDelayedBlueprints();
+                }
+                catch (Exception e)
+                {
+                    Logger.Error("Failed to configure delayed blueprints.", e);
+                }
             }
         }
     }
