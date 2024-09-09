@@ -1,19 +1,37 @@
-Alpha 0.1 version of a mod for Wrath of the Righteous, adding material from the third party book In The Company of Dragons by Rite Publishing.
+# In The Company of Dragons #
+Did you ever play 'Dungeons & Dragons' and wish you could play a dragon, and wanted to have that experience in Wrath of the Righteous? Were you excited at the idea of getting to play a Gold Dragon, only to discover the Mythic Path wasn't avaliable until the end of the game? Then this mod is for you!
 
-Current Features;
-Dragon Race! Play as a true dragon. Select the dragon race in character creation, you'll be presented with a human model that will be your 'Alternate Form'.
-Dragons start as small size, with a bite and two claw attacks and two natural armor. They have dragon type immunities (Paralysis and Sleep), and suffer penalties from wearing armor (Unfettered Predator) and using manufactured weapons (Not yet implimented)
-Current Dragon Heritages (types): Gold
+Based off of the Taninim from the third party book 'In The Company of Dragons' by Rite Publishing, reflavored to be True Dragons. You start as a small-sized dragon without much power (a bite, two claws, and a +2 Natural Armor bonus), but gain power and size as you take levels in a Dragon Hero archetype that scales across all classes with their respective archetype. Some Archetypes also have additional features on top of receiving the Dragon Hero progression.
 
-Dragon Hero Archetypes!
-Dragons can grow in strength by taking Dragon Hero Archetypes, racial archetypes for classes that improve their dragon abilities in exchange. 
-Levels in all Dragon Hero archetypes stack forr progressing their dragon abilities, so 3 levels in Sacred Warder and 2 in Trueblood Sorcerer will quality for 5th level Dragon Hero abilities.
-At first level, Dragon Heros gain a Dragon Essence, giving them elemental resistance 5 to the element tied with their dragon type. At 5th, 10th, and 15th level, this resistance improves to 10, 20, and 30 respectively.
-At fifth level, Dragon Heros gain Powerful Spellcasting, improving their spell penetration by 1, and a further +1 at 10th, 15th, and 20th level.
-At fifth level, Dragon Heros gain the Dracomorphosis feature, improving their true forms abilities. At 5th level, the dragon grows to medium, at 10th, large, and at 15th huge. 20th level in source material grows to gargantuan, but may need to be adapted differently for Wrath of the Righteous.
-Current Dragon Hero Archetypes: Monk (Hidecarved Dragon, combines Scaled Fist and Dragon Hero), Paladin (Sacred Warder), Sorcerer (Trueblood sorcerer).
-Prestige Class Archetypes (Homebrew): Eldritch Claw (Eldritch Knight), Dragon Fundamentalist (Dragon Disciple).
+## Installation ##
+1. Install Unity Mod Manager (UMM).
+2. Download the latest release of In The Company of Dragons.
+3. Use UMM to install the mod.
 
-Feats!
-Current Feats: Natural Sorcery.
-Based off of the Latent Draconic Gift feat. Heavy WIP.
+## Content ##
+* Dragon Race
+  * Gold Dragon Heritage
+
+* Dragon Hero Archetypes
+  * Dragon Disciple (Dragon Fundamentalist)
+  * Eldritch Knight (Spellclaw)
+  * Fighter (Scaled Juggernaut)
+  * Monk (Hidecarved Dragon, also has the Scaled Fist archetype features)
+  * Paladin (Sacred Warder)
+  * Sorcerer (Trueblood Sorcerer)
+
+ * Feats
+   * Latent Draconic Gift
+     * Natural Sorcery
+
+## Known Issues 
+* You'll be referenced as a half-elf in dialogue and events.
+* Dragon model starts at medium size despite starting at small, and dragon model stays at huge despite assuming gargantuan size at level 20. Please use Toybox to adjust visual model if you desire (or don't for the big boy dragon, if you think he's fat enough!)
+* Your hands are not disabled, allowing weapons to be used. This disables the claw attack for that slot, but no animation will play for your weapon attacks.
+* Resting in Dragon form __might__ cause issues. At least I occasionally had a bug that may be related where the sleep events became permanently bugged out afterwards (any crafted items/cooked food will display as unlocalized string text). Turning off Alternate Form and assuming human form seems to fix it, so be aware.
+* Natural Sorcery only works (I think) if Trueblood Sorcerer levels are taken first.
+* Natural Sorcery doesn't grant you the spells known you'd gain from the acquired Sorcerer casting levels. Please consult the Spells Known table and use Toybox to acquire the spells you're entitled to for now.
+
+### Acknowledgements ###
+Massive thanks to the modders in the Owlcat Game's modding channel for Wrath of the Righteous, who massively helped me out as I was first figuring out how to mod this game and use C# for the first time.
+Massive thanks to Wolfie's modding wiki, and Blueprint Core, and Owlcat for making the game moddable to make it all possible.
