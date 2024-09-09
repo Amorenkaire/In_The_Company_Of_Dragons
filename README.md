@@ -36,7 +36,7 @@ Expanded Content. Adds additional dragon features that may be useful for your pl
 * You'll be referenced as a half-elf in dialogue and events.
 * Dragon model starts at medium size despite starting at small, and dragon model stays at huge despite assuming gargantuan size at level 20. Please use Toybox to adjust visual model if you desire (or don't for the big boy dragon, if you think he's fat enough!)
 * Your hands are not disabled, allowing weapons to be used. This disables the claw attack for that slot, but no animation will play for your weapon attacks.
-* Resting in Dragon form __might__ cause issues. At least I occasionally had a bug that may be related where the sleep events became permanently bugged out afterwards (any crafted items/cooked food will display as unlocalized string text). Turning off Alternate Form and assuming human form seems to fix it, so be aware.
+* Resting in Dragon form __might__ cause issues. At least I occasionally had a bug that may be related where the sleep events became permanently bugged out afterwards (any crafted items/cooked food will display as unlocalized string text). Turning off Alternate Form and assuming human form before sleeping seems to prevent it, so be aware.
 * Natural Sorcery only works (I think) if Trueblood Sorcerer levels are taken first.
 * Natural Sorcery doesn't grant you the spells known you'd gain from the acquired Sorcerer casting levels. Please consult the Spells Known table and use Toybox to acquire the spells you're entitled to for now.
 
