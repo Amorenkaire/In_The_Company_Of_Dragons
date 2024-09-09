@@ -25,6 +25,9 @@ Based off of the Taninim from the third party book 'In The Company of Dragons' b
      * Natural Sorcery
    * Multiattack
 
+ * Mythic Path Compatability
+   * Gold Dragon (If you have both Gold Dragon's Dragon Form and 20 levels in the Dragon Hero progression, your race's Alternate Form will have the best features of both)
+
 ## Recommended Mods ##
 Toybox. Some features are incomplete and require Toybox to bridge the gap (model sizes and known spells).
 Expanded Content. Adds additional dragon features that may be useful for your playthrough, such as adding the dragon deities.
