@@ -23,6 +23,11 @@ Based off of the Taninim from the third party book 'In The Company of Dragons' b
  * Feats
    * Latent Draconic Gift
      * Natural Sorcery
+   * Multiattack
+
+## Recommended Mods ##
+Toybox. Some features are incomplete and require Toybox to bridge the gap (model sizes and known spells).
+Expanded Content. Adds additional dragon features that may be useful for your playthrough, such as adding the dragon deities.
 
 ## Known Issues 
 * You'll be referenced as a half-elf in dialogue and events.
